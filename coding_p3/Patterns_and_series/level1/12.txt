@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    long int a,b,sum;
+    a=2;
+    b=10;
+    for(int i=2;i<=2000;i++)
+    {
+        if(i%2==0)
+        {
+            b*=2; 
+            sum+=b;
+        }    
+        else
+        {
+            a*=3;
+            sum+=a;
+        }
+    }
+    cout<<sum<<endl;
+}

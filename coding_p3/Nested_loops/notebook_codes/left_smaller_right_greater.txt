@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+void check(int a[],int n)
+{
+    int flag=0;
+    for(int i=1;i<n-1;i++)
+    {
+        flag=0;
+        //left scan
+        for(int j=0;j<i-1;j++)
+        {
+            if(a[i]<a[j])
+            {
+                flag=1;
+                break;
+            }
+        }
+        //right scan
+        for(int j=i+1;j<n;j++)
+        {
+            if(a[i]>a[j])
+            {
+                flag=1;
+                break;
+            }
+        }
+        if(!flag)
+        {
+            cout<<a[i];
+            break;
+        }
+    }
+    if(flag)
+        cout<<"No such element Present"<<endl;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    check(a,n);
+}

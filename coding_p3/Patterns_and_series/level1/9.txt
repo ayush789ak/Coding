@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n=3,nspace=n-1;
+    int toprint=1,bspace=1,bprint=n;
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=nspace;j++)
+        {
+            cout<<' ';
+        }
+        for(int k=1;k<=toprint;k++)
+        {
+            if(k==1||k==toprint)
+                cout<<"*";
+            else
+                cout<<' ';
+        }
+        cout<<endl;
+        toprint+=2;
+        nspace--;
+    }
+    for(int i=1;i<=n-1;i++)
+    {
+        for(int j=1;j<=bspace;j++)
+        {
+            cout<<' ';
+        }
+        for(int k=1;k<=bprint;k++)
+        {
+            if(k==1||k==bprint)
+                cout<<"*";
+            else
+                cout<<' ';
+        }
+    cout<<endl;
+    bprint-=2;
+    bspace++;
+    }
+}
+

@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,tr=1;
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        tr*=2;
+    }
+    cout<<tr;
+}

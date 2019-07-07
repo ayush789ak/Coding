@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,sum=0,c=0;
+    cin>>n;
+    int ar[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>ar[i];
+    }
+    int lr,ur;
+    cin>>lr>>ur;
+    for(int i=0;i<n;i++)
+    {
+        if((ar[i]>=lr)&&(ar[i]<=ur))
+        {
+           c++; 
+        }    
+    }
+    cout<<c;
+}

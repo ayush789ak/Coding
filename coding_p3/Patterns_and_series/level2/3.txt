@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n,lnum=0,rnum,dupnum=0;
+    cin>>n;
+    dupnum=n;
+    rnum=1;
+    int nspace=1,nprint=n;
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=nspace;j++)
+        {
+            cout<<"  ";
+        }
+        for(int k=nprint;k>=1;k--)
+        {
+            lnum++;
+            cout<<lnum<<'*';
+        }
+        for(int l=nprint;l>=1;l--)
+        {
+            cout<<rnum+dupnum*dupnum;
+            rnum++;
+            if(l>1)
+                cout<<'*';
+        }
+        cout<<endl;
+        nspace++;
+        dupnum--;
+        nprint--;
+    }
+    
+}

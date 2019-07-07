@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n=4,sum,ke,ko=0;
+    for(int i=1;i<=n;i++)
+    {
+        sum+=i;
+        ke=sum;
+        for(int j=1;j<=i;j++)
+        {
+            ko++;
+            if(i%2==0)
+            {
+                cout<<ke--<<' ';
+            }
+            else
+            {
+                cout<<ko<<' ';
+            }
+        }
+        cout<<endl;
+    }
+}

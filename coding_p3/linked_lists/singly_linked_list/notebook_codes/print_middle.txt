@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+class Node
+{
+    public:
+    int data;
+    Node *next;
+};
+void insert(Node **headptr,int value)
+{
+    Node* temp=new Node();
+    temp->data=value;
+    temp->next=*headptr;
+    *headptr=temp;
+    return;
+}
+void display(Node *headptr)
+{
+    while(headptr!=NULL)
+    {
+        cout<<headptr->data<<' ';
+        headptr=headptr->next;
+    }
+}
+
+void printmiddle(Node *head)
+{
+    Node *ptr1=head,*ptr2=head;
+    if(head!=NULL)
+    {
+        while(ptr2!=NULL && ptr2->next!=NULL)
+        {
+            ptr1=ptr1->next;
+            ptr2=ptr2->next->next;
+        }
+        cout<<ptr1->data<<endl;
+        return;
+    }
+}
+int main()
+{
+   Node *head=NULL;
+   int n;
+   cin>>n;
+   int a[n];
+   for(int i=0;i<n;i++)
+   {
+       cin>>a[i];
+   }
+   for(int i=n-1;i>=0;i--)
+   {
+       insert(&head,a[i]);
+   }
+   display(head);
+   cout<<endl;
+   printmiddle(head);
+}

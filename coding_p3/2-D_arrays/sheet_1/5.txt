@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n,sum=0,max=0;
+    cin>>n;
+    int a[n][n],b[n],rlar=0,clar=0;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cin>>a[i][j];
+        }
+    }
+    
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cout<<a[i][j];
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    {
+        rlar=0;
+        for(int j=0;j<n;j++)
+        {
+            if(rlar<a[i][j])
+                rlar=a[i][j];
+        }
+        cout<<rlar;
+    }
+    cout<<endl;
+    for(int i=0;i<n;i++)
+    {
+        clar=0;
+        for(int j=0;j<n;j++)
+        {
+            if(clar<a[j][i])
+                clar=a[j][i];
+        }
+        cout<<clar;
+    }
+    
+}

@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+class Node
+{
+    public:
+    int data;
+    Node *next;
+};
+void insert(Node **headptr,int value)
+{
+    Node* temp=new Node();
+    temp->data=value;
+    temp->next=*headptr;
+    *headptr=temp;
+    return;
+}
+void display(Node *headptr)
+{
+    while(headptr!=NULL)
+    {
+        cout<<headptr->data<<' ';
+        headptr=headptr->next;
+    }
+}
+void del(Node **headptr, int key)
+{
+    Node *temp=*headptr;
+    if(temp->data==key)
+    {
+        *headptr=temp->next;
+        delete(temp);
+        return;
+    }
+    Node *prev;
+    while(temp->data!=key && temp!=NULL)
+    {
+        prev=temp;
+        temp=temp->next;
+    }
+    if(temp==NULL)
+    {
+        cout<<"Key to be deleted not found"<<endl;
+        return;
+    }
+    prev->next=temp->next;
+    delete(temp);
+    return;
+}
+int main()
+{
+   Node *head=NULL;
+   insert(&head,10);
+   insert(&head,8);
+   insert(&head,7);
+   insert(&head,11);
+   display(head);
+   cout<<endl;
+   del(&head,7);
+   display(head);
+   cout<<endl;
+}

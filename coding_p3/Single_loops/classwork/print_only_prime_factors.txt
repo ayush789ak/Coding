@@ -1,0 +1,17 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    int l=sqrt(n);
+    for(int i=2;i<=l;i++)
+    {
+        if(n%i==0)
+        {
+            cout<<i<<' ';
+        }
+    }
+}

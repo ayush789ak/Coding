@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char prt1='A',prt2='Z';
+    for(int i=1;i<=10;i++)
+    {
+        cout<<prt1<<prt2<<' ';
+        prt1+=2;
+        prt2--;
+    }
+}

@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+void equilibrium(int a[],int n)
+{
+    int lsum=a[0];
+    int rsum=0;
+    for(int j=2;j<n;j++)
+        rsum+=a[j];
+    if(lsum==rsum)
+        cout<<a[1]<<1;
+    for(int i=2;i<n-1;i++)
+    {
+        lsum+=a[i-1];
+        rsum-=a[i];
+        if(lsum==rsum)
+        {
+            cout<<a[i]<<' '<<i;
+            break;
+        }
+    }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    equilibrium(a,n);
+}

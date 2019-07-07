@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int myatoi(char c[])
+{
+    int i=0,val=0;
+    while(c[i]!='\0')
+    {
+        if(c[i]>'0'&&c[i]<='9')
+        {
+        val=val*10+c[i]-'0';
+        }
+        else
+        {
+            val=-1;
+            break;
+        }
+        i++;
+    }
+    return val;
+}
+int main()
+{
+    char c[10];
+    cin>>c;
+    cout<<myatoi(c);
+}
